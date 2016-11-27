@@ -1,0 +1,27 @@
+function reverseArray(array){
+  var newArray = [];
+  for(var i = array.length - 1; i >= 0; i--){
+    newArray.push(array[i]);
+  }
+  return newArray;
+}
+
+//Not in place, but still functional.
+function reverseArrayInPlace(array){
+  var arrayLength =  array.length;
+  for (var endCounter = arrayLength -1; endCounter >= 0; endCounter--){
+    array.push(array[endCounter]);
+  }
+  for(var i = 0; i < arrayLength; i++){
+    array.shift();
+  }
+  return array;
+}
+
+
+console.log(reverseArray(["A", "B", "C"]));
+// → ["C", "B", "A"];
+var arrayValue = [1, 2, 3, 4, 5,6];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
+// → [5, 4, 3, 2, 1]
